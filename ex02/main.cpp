@@ -4,11 +4,11 @@
 int main() {
     // Test case 1: Create an array of integers
     Array<int> intArray(5);
-    for (size_t i = 0; i < intArray.getSize(); i++) {
+    for (size_t i = 0; i < intArray.size(); i++) {
         intArray[i] = i + 1;
     }
     std::cout << "Array of integers: ";
-    for (size_t i = 0; i < intArray.getSize(); i++) {
+    for (size_t i = 0; i < intArray.size(); i++) {
         std::cout << intArray[i] << " ";
     }
     std::cout << std::endl;
@@ -19,7 +19,7 @@ int main() {
     doubleArray[1] = 2.2;
     doubleArray[2] = 3.3;
     std::cout << "Array of doubles: ";
-    for (size_t i = 0; i < doubleArray.getSize(); i++) {
+    for (size_t i = 0; i < doubleArray.size(); i++) {
         std::cout << doubleArray[i] << " ";
     }
     std::cout << std::endl;
