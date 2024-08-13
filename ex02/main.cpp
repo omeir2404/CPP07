@@ -2,6 +2,10 @@
 #include <iostream>
 
 int main() {
+
+    int * a = new int();
+    std::cout << a << std::endl;
+    delete a;
     // Test case 1: Create an array of integers
     Array<int> intArray(5);
     for (size_t i = 0; i < intArray.size(); i++) {
@@ -31,5 +35,18 @@ int main() {
         std::cout << "Exception caught: " << e.what() << std::endl;
     }
 
+    //test case 4:  check if copies are independent
+
+    Array<int> array2(3);
+    for (size_t i = 0; i < array2.size(); i++){
+        array2[i] = i + 1;
+    }
+    Array<int> copiedArray1(array2);
+    Array<int> copiedArray2 = array2;
+
+    array2[1] = 5;
+    for(int i = 0; i < 3; i++){
+        std::cout << "array2[" << i << "]: "<< array2[i] << "| copiedArray1[ "<< i << "]: " << copiedArray1[i] << "| copiedArray2[ "<< i << "]: " << copiedArray2[i] << std::endl;
+    }
     return 0;
 }

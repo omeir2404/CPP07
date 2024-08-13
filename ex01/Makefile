@@ -17,6 +17,10 @@ run:	$(NAME)
 		./$(NAME)
 
 fclean:	clean
-		rm -f $(NAME)
+		rm -f $(NAME) val.log
+
+mem: re 
+	valgrind  --leak-check=full --log-file=val.log ./ex01
+
 
 re:		fclean $(NAME)
